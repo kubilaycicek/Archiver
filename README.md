@@ -1,2 +1,2 @@
 # Archiver
-Archiver is an image storage application.
+Archiver is Image Storage Application.
