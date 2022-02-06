@@ -1,11 +1,11 @@
 package com.kubilaycicek.archiver.payload.request;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.kubilaycicek.archiver.payload.dto.ArchiveDto;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class ArchiveRequest extends BaseRequest {
+public class ArchiveRequest {
+    @JsonProperty(namespace = "archive")
+    private ArchiveDto archiveDto;
 }

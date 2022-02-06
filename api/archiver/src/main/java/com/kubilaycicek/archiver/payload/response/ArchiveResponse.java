@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ArchiveResponse extends BaseResponse {
+public class ArchiveResponse {
+    @JsonProperty(namespace = "archive")
     private ArchiveDto archiveDto;
 }
