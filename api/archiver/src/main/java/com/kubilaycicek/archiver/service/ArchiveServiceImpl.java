@@ -22,8 +22,6 @@ public class ArchiveServiceImpl implements ArchiveService {
     @Override
     public ArchiveDto saveArchive(ArchiveDto archiveDto) {
         archiveDto.setUuid(UUID.randomUUID().toString());
-
-
         return archiveMapper.toArchiveDto(archiveRepository.save(archiveMapper.toArchive(archiveDto)));
     }
 
