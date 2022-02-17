@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "11b44ce4-467c-445d-83af-5dcf89f3306d",
+		"name": "Archive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddArchive",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"archiveDto\": {\r\n        \"id\":0,\r\n        \"uuid\":\"\",\r\n        \"file\": \"asdadasdasdasdqweasdzxc\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/v1/archive/add",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"archive",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetArchiveList",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/v1/archive/list",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"archive",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveArchive",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090/api/v1/archive/delete/ceb25560-6744-43ad-bd39-ca54a3edfaca",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"api",
+						"v1",
+						"archive",
+						"delete",
+						"ceb25560-6744-43ad-bd39-ca54a3edfaca"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
