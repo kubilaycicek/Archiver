@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-02-06T23:58:51+0300",
+    date = "2022-02-17T20:05:45+0300",
     comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.3.3.jar, environment: Java 11.0.12 (Oracle Corporation)"
 )
 @Component
@@ -23,16 +23,24 @@ public class ArchiveMapperImpl implements ArchiveMapper {
 
         Archive archive = new Archive();
 
+        archive.setId( archiveDto.getId() );
+        archive.setUuid( archiveDto.getUuid() );
+        archive.setFile( archiveDto.getFile() );
+
         return archive;
     }
 
     @Override
-    public ArchiveDto toArchiveDtoList(Archive archive) {
+    public ArchiveDto toArchiveDto(Archive archive) {
         if ( archive == null ) {
             return null;
         }
 
         ArchiveDto archiveDto = new ArchiveDto();
+
+        archiveDto.setId( archive.getId() );
+        archiveDto.setUuid( archive.getUuid() );
+        archiveDto.setFile( archive.getFile() );
 
         return archiveDto;
     }
@@ -59,7 +67,7 @@ public class ArchiveMapperImpl implements ArchiveMapper {
 
         List<ArchiveDto> list = new ArrayList<ArchiveDto>( archiveDtoList.size() );
         for ( Archive archive : archiveDtoList ) {
-            list.add( toArchiveDtoList( archive ) );
+            list.add( toArchiveDto( archive ) );
         }
 
         return list;

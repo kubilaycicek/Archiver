@@ -5,18 +5,21 @@ import java.util.Base64;
 
 public class ImageUtil {
 
+    private ImageUtil() {
+    }
+
     public static String ConvertImageFileToBase64String(String imagePath) throws IOException {
         String base64Image = "";
         File file = new File(imagePath);
         try (FileInputStream imageInFile = new FileInputStream(file)) {
             // Reading a Image file from file system
-            byte imageData[] = new byte[(int) file.length()];
+            byte[] imageData = new byte[(int) file.length()];
             imageInFile.read(imageData);
             base64Image = Base64.getEncoder().encodeToString(imageData);
         } catch (FileNotFoundException e) {
-            System.out.println("Image not found" + e);
+            System.err.println("Image not found" + e);
         } catch (IOException ioe) {
-            System.out.println("Exception while reading the Image " + ioe);
+            System.err.println("Exception while reading the Image " + ioe);
         }
         return base64Image;
     }
@@ -27,9 +30,9 @@ public class ImageUtil {
             byte[] imageByteArray = Base64.getDecoder().decode(base64Image);
             imageOutFile.write(imageByteArray);
         } catch (FileNotFoundException e) {
-            System.out.println("Image not found" + e);
+            System.err.println("Image not found" + e);
         } catch (IOException ioe) {
-            System.out.println("Exception while reading the Image " + ioe);
+            System.err.println("Exception while reading the Image " + ioe);
         }
     }
 }

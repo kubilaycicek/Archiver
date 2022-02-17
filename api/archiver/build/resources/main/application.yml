@@ -8,5 +8,8 @@ spring:
     console.enabled: true
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    spring:
+      jpa:
+        open-in-view: true
 server:
-  port: 8081
+  port: 9090
