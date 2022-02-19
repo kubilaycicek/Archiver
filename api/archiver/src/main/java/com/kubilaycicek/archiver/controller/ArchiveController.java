@@ -19,6 +19,7 @@ public class ArchiveController {
 
     private final ArchiveService archiveService;
 
+    @CrossOrigin
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ArchiveDto> saveArchive(@RequestBody ArchiveRequest archiveRequest) {
         if (archiveRequest.getArchiveDto() != null) {
@@ -28,11 +29,13 @@ public class ArchiveController {
         }
     }
 
+    @CrossOrigin
     @GetMapping(value = "/list")
     public ResponseEntity<List<ArchiveDto>> getList() {
         return ResponseEntity.ok(archiveService.getList());
     }
 
+    @CrossOrigin
     @PostMapping(value = "/delete/{uuid}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> removeArchiveByUuid(@RequestBody @PathVariable String uuid) {
         archiveService.deleteArchive(uuid);

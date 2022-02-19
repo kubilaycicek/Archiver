@@ -1,0 +1,14 @@
+version: '0.1'
+services:
+  archiver-app:
+    image: archiver
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9090:9090
+    sonarqube:
+      image: sonarqube
+      ports:
+        - "9000:9000"
+        - "9092:9092"
