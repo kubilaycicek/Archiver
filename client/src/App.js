@@ -5,7 +5,7 @@ import useFetch from './hooks/useFetch';
 
 function App() {
   
-  const {data, error, isLoading} = useFetch('localhost:9090/api/v1/archive/list')
+  const {data, error, isLoading} = useFetch('http://localhost:9090/api/v1/archive/list')
   console.log('data', data);
   return (
     <div className="App">

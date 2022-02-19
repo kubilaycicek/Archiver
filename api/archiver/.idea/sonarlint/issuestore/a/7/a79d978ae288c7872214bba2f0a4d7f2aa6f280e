@@ -1,0 +1,9 @@
+
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™¦Ôùøÿÿÿÿ8‘ÓıÅğ/
+l
+java:S2674"JCheck the return value of the "read" call to see how many bytes were read.(Ã®‚Ãùÿÿÿÿ8•ÓıÅğ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(·Ğ¡•8–ÓıÅğ/
+U	java:S106"9Replace this use of System.out or System.err by a logger.(’†àå8–ÓıÅğ/
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÅìÄó8–ÓıÅğ/
+U	java:S106!"9Replace this use of System.out or System.err by a logger.(·Ğ¡•8˜ÓıÅğ/
+U	java:S106#"9Replace this use of System.out or System.err by a logger.(’†àå8˜ÓıÅğ/
