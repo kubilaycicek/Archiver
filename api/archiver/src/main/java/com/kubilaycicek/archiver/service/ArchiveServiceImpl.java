@@ -1,5 +1,6 @@
 package com.kubilaycicek.archiver.service;
 
+import com.kubilaycicek.archiver.exception.ArchiveNotFoundException;
 import com.kubilaycicek.archiver.mapper.ArchiveMapper;
 import com.kubilaycicek.archiver.payload.dto.ArchiveDto;
 import com.kubilaycicek.archiver.payload.model.Archive;
@@ -27,7 +28,7 @@ public class ArchiveServiceImpl implements ArchiveService {
 
     @Override
     public void deleteArchive(String uuid) {
-        Optional<Archive> archiveDb = Optional.ofNullable(archiveRepository.findByUuid(uuid).orElseThrow(EntityNotFoundException::new));
+        Optional<Archive> archiveDb = Optional.ofNullable(archiveRepository.findByUuid(uuid).orElseThrow(() -> new ArchiveNotFoundException("Archive : " + uuid + " not found.")));
         if (archiveDb.isPresent()) {
             archiveRepository.delete(archiveDb.get());
         }
@@ -40,6 +41,6 @@ public class ArchiveServiceImpl implements ArchiveService {
 
     @Override
     public Optional<ArchiveDto> findByUuid(String uuid) {
-        return Optional.ofNullable(archiveMapper.toArchiveDto(archiveRepository.findByUuid(uuid).orElseThrow(EntityNotFoundException::new)));
+        return Optional.ofNullable(archiveMapper.toArchiveDto(archiveRepository.findByUuid(uuid).orElseThrow(() -> new ArchiveNotFoundException("Archive : " + uuid + " not found."))));
     }
 }

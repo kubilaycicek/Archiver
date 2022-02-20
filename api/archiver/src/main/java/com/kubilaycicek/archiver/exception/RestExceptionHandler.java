@@ -15,11 +15,11 @@ import java.util.List;
 @RestControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler({IllegalArgumentException.class})
+    @ExceptionHandler({ArchiveNotFoundException.class})
     public final ResponseEntity<ErrorResponse> handleAllExceptions(Exception ex, WebRequest request) {
         List<String> details = new ArrayList<>();
         details.add(ex.getLocalizedMessage());
-        return new ResponseEntity<>(new ErrorResponse("INTERNAL SERVER ERROR", details, LocalDateTime.now()), HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(new ErrorResponse(HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND.toString(), details, LocalDateTime.now()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
 }

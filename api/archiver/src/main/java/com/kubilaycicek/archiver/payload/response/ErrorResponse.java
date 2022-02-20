@@ -11,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ErrorResponse {
+    private int statusCode;
     private String message;
     private List<String> details;
     private LocalDateTime dateTime;
