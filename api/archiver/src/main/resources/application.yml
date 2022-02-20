@@ -11,5 +11,6 @@ spring:
     spring:
       jpa:
         open-in-view: true
+
 server:
   port: 9090

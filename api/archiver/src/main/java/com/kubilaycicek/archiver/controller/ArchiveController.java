@@ -4,6 +4,7 @@ import com.kubilaycicek.archiver.payload.dto.ArchiveDto;
 import com.kubilaycicek.archiver.payload.request.ArchiveRequest;
 import com.kubilaycicek.archiver.service.ArchiveService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +30,7 @@ public class ArchiveController {
         }
     }
 
+    @CacheEvict(value = "cacheListOfArchive")
     @GetMapping(value = "/list")
     public ResponseEntity<List<ArchiveDto>> getList() {
         return ResponseEntity.ok(archiveService.getList());
