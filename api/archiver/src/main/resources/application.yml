@@ -11,6 +11,10 @@ spring:
     spring:
       jpa:
         open-in-view: true
-
+      cache:
+        type: none
+  springdoc:
+      api-docs:
+            path: /archiver-openapi
 server:
   port: 9090

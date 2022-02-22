@@ -3,6 +3,7 @@ package com.kubilaycicek.archiver.controller;
 import com.kubilaycicek.archiver.payload.dto.ArchiveDto;
 import com.kubilaycicek.archiver.payload.request.ArchiveRequest;
 import com.kubilaycicek.archiver.service.ArchiveService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,7 @@ public class ArchiveController {
 
     private final ArchiveService archiveService;
 
+    @Tag(name = "save archive ")
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ArchiveDto> saveArchive(@RequestBody ArchiveRequest archiveRequest) {
         if (archiveRequest.getArchiveDto() != null) {
@@ -30,12 +32,14 @@ public class ArchiveController {
         }
     }
 
+    @Tag(name = "list of Archive ")
     @CacheEvict(value = "cacheListOfArchive")
     @GetMapping(value = "/list")
     public ResponseEntity<List<ArchiveDto>> getList() {
         return ResponseEntity.ok(archiveService.getList());
     }
 
+    @Tag(name = "delete Archive ")
     @PostMapping(value = "/delete/{uuid}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> removeArchiveByUuid(@RequestBody @PathVariable String uuid) {
         archiveService.deleteArchive(uuid);
