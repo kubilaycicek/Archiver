@@ -8,7 +8,6 @@ import com.kubilaycicek.archiver.repository.ArchiveRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -29,9 +28,7 @@ public class ArchiveServiceImpl implements ArchiveService {
     @Override
     public void deleteArchive(String uuid) {
         Optional<Archive> archiveDb = Optional.ofNullable(archiveRepository.findByUuid(uuid).orElseThrow(() -> new ArchiveNotFoundException("Archive : " + uuid + " not found.")));
-        if (archiveDb.isPresent()) {
-            archiveRepository.delete(archiveDb.get());
-        }
+        archiveDb.ifPresent(archiveRepository::delete);
     }
 
     @Override

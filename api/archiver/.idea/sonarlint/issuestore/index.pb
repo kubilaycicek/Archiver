@@ -1,8 +1,6 @@
 
 {
 Ksrc/main/java/com/kubilaycicek/archiver/payload/request/ArchiveRequest.java,a\d\adddb0444e668b1f941b6558427f576ca43b128d
-y
-Isrc/main/java/com/kubilaycicek/archiver/repository/ArchiveRepository.java,4\9\498f52864faad3885760f5ed4f3ddac4535d26cf
 u
 Esrc/test/java/com/kubilaycicek/archiver/ArchiverApplicationTests.java,c\8\c8c4fa010528ca9982961ae9a02183461591f1db
 r
@@ -20,9 +18,5 @@ k
 ;src/main/java/com/kubilaycicek/archiver/util/ImageUtil.java,a\7\a79d978ae288c7872214bba2f0a4d7f2aa6f280e
 }
 Msrc/main/java/com/kubilaycicek/archiver/payload/response/ArchiveResponse.java,c\4\c419a1ff8a99d7ffa989084242b6c48a18921bb7
-w
-Gsrc/main/java/com/kubilaycicek/archiver/service/ArchiveServiceImpl.java,e\d\ed573f2310dedddcb242019686f8ced66f892e44
-{
-Ksrc/main/java/com/kubilaycicek/archiver/payload/response/ErrorResponse.java,1\f\1f42d7260901d92d1d47dff6c386cbbf22734758
 X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
