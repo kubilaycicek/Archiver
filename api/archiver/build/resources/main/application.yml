@@ -14,7 +14,12 @@ spring:
       cache:
         type: none
   springdoc:
-      api-docs:
-            path: /archiver-openapi
+    api-docs:
+      path: /archiver-openapi
+  logging:
+    level:
+      root: info
+
 server:
   port: 9090
+

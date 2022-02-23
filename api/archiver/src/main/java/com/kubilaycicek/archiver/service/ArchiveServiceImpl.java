@@ -6,11 +6,13 @@ import com.kubilaycicek.archiver.payload.dto.ArchiveDto;
 import com.kubilaycicek.archiver.payload.model.Archive;
 import com.kubilaycicek.archiver.repository.ArchiveRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+
 
 @RequiredArgsConstructor
 @Service
@@ -28,7 +30,9 @@ public class ArchiveServiceImpl implements ArchiveService {
     @Override
     public void deleteArchive(String uuid) {
         Optional<Archive> archiveDb = Optional.ofNullable(archiveRepository.findByUuid(uuid).orElseThrow(() -> new ArchiveNotFoundException("Archive : " + uuid + " not found.")));
-        archiveDb.ifPresent(archiveRepository::delete);
+        if (archiveDb.isPresent()) {
+            archiveRepository.delete(archiveDb.get());
+        }
     }
 
     @Override
