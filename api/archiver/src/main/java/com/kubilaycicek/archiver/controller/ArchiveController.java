@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,12 +24,13 @@ public class ArchiveController {
 
     @Tag(name = "save archive ")
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ArchiveDto> saveArchive(@RequestBody ArchiveRequest archiveRequest) {
+    public ResponseEntity<?> saveArchive(@Valid @RequestBody ArchiveRequest archiveRequest) {
         if (archiveRequest.getArchiveDto() != null) {
             return ResponseEntity.ok(archiveService.saveArchive(archiveRequest.getArchiveDto()));
         } else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+
     }
 
     @Tag(name = "list of Archive ")

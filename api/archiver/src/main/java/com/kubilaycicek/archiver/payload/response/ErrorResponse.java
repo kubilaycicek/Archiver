@@ -3,6 +3,7 @@ package com.kubilaycicek.archiver.payload.response;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ErrorResponse {
     private int statusCode;
-    private String message;
+    private HttpStatus status;
     private List<String> details;
     private LocalDateTime dateTime;
 }
