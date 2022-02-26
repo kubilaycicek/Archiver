@@ -14,6 +14,7 @@ public class Archive {
     private Long id;
     @Column(name = "uuid")
     private String uuid;
+    @Lob
     @Column(name = "file")
     private String file;
 }

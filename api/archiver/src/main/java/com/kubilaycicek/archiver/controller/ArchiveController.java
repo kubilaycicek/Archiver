@@ -5,7 +5,7 @@ import com.kubilaycicek.archiver.payload.request.ArchiveRequest;
 import com.kubilaycicek.archiver.service.ArchiveService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +34,7 @@ public class ArchiveController {
     }
 
     @Tag(name = "list of Archive ")
-    @CacheEvict(value = "cacheListOfArchive")
+    @Cacheable(value = "cacheListOfArchive")
     @GetMapping(value = "/list")
     public ResponseEntity<List<ArchiveDto>> getList() {
         return ResponseEntity.ok(archiveService.getList());
