@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2022-02-26T20:37:22+0300",
+    date = "2022-02-27T14:14:53+0300",
     comments = "version: 1.4.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.3.3.jar, environment: Java 11.0.12 (Oracle Corporation)"
 )
 @Component
@@ -60,13 +60,13 @@ public class ArchiveMapperImpl implements ArchiveMapper {
     }
 
     @Override
-    public List<ArchiveDto> toArchiveDtoList(List<Archive> archiveDtoList) {
-        if ( archiveDtoList == null ) {
+    public List<ArchiveDto> toArchiveDtoList(List<Archive> archiveList) {
+        if ( archiveList == null ) {
             return null;
         }
 
-        List<ArchiveDto> list = new ArrayList<ArchiveDto>( archiveDtoList.size() );
-        for ( Archive archive : archiveDtoList ) {
+        List<ArchiveDto> list = new ArrayList<ArchiveDto>( archiveList.size() );
+        for ( Archive archive : archiveList ) {
             list.add( toArchiveDto( archive ) );
         }
 

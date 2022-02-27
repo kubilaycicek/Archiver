@@ -1,12 +1,14 @@
 package com.kubilaycicek.archiver.service;
 
 import com.kubilaycicek.archiver.exception.ArchiveNotFoundException;
+import com.kubilaycicek.archiver.exception.CategoryNotFoundException;
 import com.kubilaycicek.archiver.mapper.ArchiveMapper;
 import com.kubilaycicek.archiver.payload.dto.ArchiveDto;
 import com.kubilaycicek.archiver.payload.model.Archive;
+import com.kubilaycicek.archiver.payload.model.Category;
 import com.kubilaycicek.archiver.repository.ArchiveRepository;
+import com.kubilaycicek.archiver.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,11 +22,19 @@ public class ArchiveServiceImpl implements ArchiveService {
 
     private final ArchiveMapper archiveMapper;
     private final ArchiveRepository archiveRepository;
+    private final CategoryRepository categoryRepository;
 
     @Override
-    public ArchiveDto saveArchive(ArchiveDto archiveDto) {
-        archiveDto.setUuid(UUID.randomUUID().toString());
-        return archiveMapper.toArchiveDto(archiveRepository.save(archiveMapper.toArchive(archiveDto)));
+    public ArchiveDto saveArchive(ArchiveDto archiveDto, String categoryUuid) {
+
+        Archive archive = archiveMapper.toArchive(archiveDto);
+        archive.setUuid(UUID.randomUUID().toString());
+        Optional<Category> categoryDb = Optional.ofNullable(categoryRepository.findByUuid(categoryUuid).orElseThrow(() -> new CategoryNotFoundException("Uuid+" + categoryUuid + "not found")));
+        if (categoryDb.isPresent()) {
+            archive.setCategory(categoryDb.get());
+        }
+
+        return archiveMapper.toArchiveDto(archiveRepository.save(archive));
     }
 
     @Override

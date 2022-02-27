@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -17,22 +17,14 @@ public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository categoryRepository;
 
     @Override
-    public CategoryDto saveCategory(CategoryDto categoryDto) {
-        return null;
-    }
-
-    @Override
-    public void deleteCategory(String uuid) {
-
-    }
-
-    @Override
     public List<CategoryDto> getList() {
-        return null;
+        return categoryMapper.toCategoryDtoList(categoryRepository.findAll());
     }
 
     @Override
-    public Optional<CategoryDto> findByUuid(String uuid) {
-        return Optional.empty();
+    public CategoryDto saveCategory(CategoryDto categoryDto) {
+        categoryDto.setUuid(UUID.randomUUID().toString());
+        return categoryMapper.toCategoryDto(categoryRepository.save(categoryMapper.toCategory(categoryDto)));
     }
+
 }

@@ -1,7 +1,8 @@
 package com.kubilaycicek.archiver.controller;
 
-import com.kubilaycicek.archiver.payload.dto.ArchiveDto;
 import com.kubilaycicek.archiver.payload.request.ArchiveRequest;
+import com.kubilaycicek.archiver.payload.response.ArchiveListResponse;
+import com.kubilaycicek.archiver.payload.response.ArchiveResponse;
 import com.kubilaycicek.archiver.service.ArchiveService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -24,9 +24,9 @@ public class ArchiveController {
 
     @Tag(name = "save archive ")
     @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> saveArchive(@Valid @RequestBody ArchiveRequest archiveRequest) {
+    public ResponseEntity<ArchiveResponse> saveArchive(@Valid @RequestBody ArchiveRequest archiveRequest) {
         if (archiveRequest.getArchiveDto() != null) {
-            return ResponseEntity.ok(archiveService.saveArchive(archiveRequest.getArchiveDto()));
+            return ResponseEntity.ok(new ArchiveResponse(archiveService.saveArchive(archiveRequest.getArchiveDto(),archiveRequest.getCategoryUuid())));
         } else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -36,8 +36,8 @@ public class ArchiveController {
     @Tag(name = "list of Archive ")
     @Cacheable(value = "cacheListOfArchive")
     @GetMapping(value = "/list")
-    public ResponseEntity<List<ArchiveDto>> getList() {
-        return ResponseEntity.ok(archiveService.getList());
+    public ResponseEntity<ArchiveListResponse> getList() {
+        return ResponseEntity.ok(new ArchiveListResponse(archiveService.getList()));
     }
 
     @Tag(name = "delete Archive ")

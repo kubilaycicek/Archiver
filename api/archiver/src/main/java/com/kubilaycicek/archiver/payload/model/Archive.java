@@ -17,4 +17,8 @@ public class Archive {
     @Lob
     @Column(name = "file")
     private String file;
+
+    @ManyToOne(fetch = FetchType.EAGER )
+    @JoinColumn(name = "category_id")
+    private Category category;
 }

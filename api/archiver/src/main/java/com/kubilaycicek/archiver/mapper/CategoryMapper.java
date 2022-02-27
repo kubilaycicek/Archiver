@@ -10,6 +10,7 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
+
     @Named("toCategory")
     Category toCategory(CategoryDto categoryDto);
 
@@ -19,6 +20,6 @@ public interface CategoryMapper {
     @IterableMapping(qualifiedByName = "toCategory")
     List<Category> toCategoryList(List<CategoryDto> categoryDtoList);
 
-    @IterableMapping(qualifiedByName = "toCategoryListDto")
-    List<CategoryDto> toCategoryListDto(List<Category> categoryList);
+    @IterableMapping(qualifiedByName = "toCategoryDto")
+    List<CategoryDto> toCategoryDtoList(List<Category> categoryList);
 }

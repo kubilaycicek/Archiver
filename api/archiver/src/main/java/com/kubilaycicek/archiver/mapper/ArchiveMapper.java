@@ -21,5 +21,5 @@ public interface ArchiveMapper {
     List<Archive> toArchiveList(List<ArchiveDto> archiveDtoList);
 
     @IterableMapping(qualifiedByName = "toArchiveDto")
-    List<ArchiveDto> toArchiveDtoList(List<Archive> archiveDtoList);
+    List<ArchiveDto> toArchiveDtoList(List<Archive> archiveList);
 }
