@@ -1,0 +1,56 @@
+.post-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+
+  background-color: rgb(25, 91, 189);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 0 1rem;
+  
+  height: 4rem;
+  display: flex;
+  align-items: center;
+
+  transition: width .4s ease-in;
+  overflow: hidden;
+}
+.first-width {
+  width: 4rem;
+}
+.last-width {
+  width: 130px;
+}
+.post-upload-icon {
+  filter: invert();
+  margin-right: .5rem;
+}
+.post-upload-text{
+  position: relative;
+  white-space: nowrap;
+  right: -80px;
+}
+.text-end {
+  right: 0px;
+}
+@media screen and (min-width:720px) {
+  .last-width {
+    width: 140px;
+  }
+}
+/* .post-button:hover .post-button-icon::after{
+  content: "Post Image";
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.25rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.post-button:hover {
+  width: fit-content;
+  padding: 1rem;
+} */
