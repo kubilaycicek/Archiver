@@ -1,0 +1,48 @@
+form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  border: 1px dashed whitesmoke;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+form input {
+  position: relative;
+  cursor: pointer;
+  width: 200px;
+  height: 200px;
+  z-index: 3;
+  top: -42px;
+  background-color: transparent;
+}
+form i {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  color: #000;
+  font-size: 7rem;
+  z-index: 2;
+}
+form input:hover form i {
+  color: #bb6414;
+}
+form button {
+  border: none;
+  background: #202e4d;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+form button:disabled {
+  background: #a0a0a0;
+  font-size: 1.5rem;
+}
+form button:disabled:hover {
+  cursor: not-allowed;
+}
+form button:not(:disabled):hover {
+  color: #bb6414;
+  cursor: pointer;
+}
