@@ -18,7 +18,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/category")
+@RequestMapping("api/v1/categories")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CategoryController {
 
@@ -32,7 +32,7 @@ public class CategoryController {
     }
 
     @Tag(name = "save category ")
-    @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<CategoryResponse> saveArchive(@Valid @RequestBody CategoryRequest categoryRequest) {
         if (categoryRequest.getCategoryDto() != null) {
             return ResponseEntity.ok(new CategoryResponse(categoryService.saveCategory(categoryRequest.getCategoryDto())));

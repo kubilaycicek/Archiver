@@ -16,17 +16,17 @@ import javax.validation.Valid;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("api/v1/archive")
+@RequestMapping("api/v1/archives")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ArchiveController {
 
     private final ArchiveService archiveService;
 
     @Tag(name = "save archive ")
-    @PostMapping(value = "/add", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping( produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ArchiveResponse> saveArchive(@Valid @RequestBody ArchiveRequest archiveRequest) {
         if (archiveRequest.getArchiveDto() != null) {
-            return ResponseEntity.ok(new ArchiveResponse(archiveService.saveArchive(archiveRequest.getArchiveDto(),archiveRequest.getCategoryUuid())));
+            return ResponseEntity.status(HttpStatus.CREATED).body(new ArchiveResponse(archiveService.saveArchive(archiveRequest.getArchiveDto(),archiveRequest.getCategoryUuid())));
         } else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -41,7 +41,7 @@ public class ArchiveController {
     }
 
     @Tag(name = "delete Archive ")
-    @PostMapping(value = "/delete/{uuid}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(value = "/{uuid}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> removeArchiveByUuid(@RequestBody @PathVariable String uuid) {
         archiveService.deleteArchive(uuid);
         return new ResponseEntity<>(HttpStatus.OK);
