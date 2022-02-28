@@ -16,12 +16,6 @@ k
 ;src/main/java/com/kubilaycicek/archiver/util/ImageUtil.java,a\7\a79d978ae288c7872214bba2f0a4d7f2aa6f280e
 y
 Isrc/main/java/com/kubilaycicek/archiver/repository/ArchiveRepository.java,4\9\498f52864faad3885760f5ed4f3ddac4535d26cf
-
-Osrc/main/java/com/kubilaycicek/archiver/exception/ArchiveNotFoundException.java,d\6\d6d0afcb14bc20ea9930586ead5e71e480f145a8
-Ä
-Psrc/main/java/com/kubilaycicek/archiver/exception/CategoryNotFoundException.java,2\a\2af0e069baf53305b190f731744b5b6e79661b2a
-{
-Ksrc/main/java/com/kubilaycicek/archiver/exception/RestExceptionHandler.java,c\1\c1eaac107f06f8f59e0853ba1bb096fbe04ba9ee
 {
 Ksrc/main/java/com/kubilaycicek/archiver/payload/response/ErrorResponse.java,1\f\1f42d7260901d92d1d47dff6c386cbbf22734758
 Å
@@ -40,8 +34,6 @@ z
 Jsrc/main/java/com/kubilaycicek/archiver/repository/CategoryRepository.java,0\0\0059ebdff6b601c1494b84984d4405c60acf2e05
 {
 Ksrc/main/java/com/kubilaycicek/archiver/payload/request/ArchiveRequest.java,a\d\adddb0444e668b1f941b6558427f576ca43b128d
-t
-Dsrc/main/java/com/kubilaycicek/archiver/service/CategoryService.java,3\5\3507ba20075c64306812ad0e8176df70e7d86f91
 }
 Msrc/main/java/com/kubilaycicek/archiver/payload/response/ArchiveResponse.java,c\4\c419a1ff8a99d7ffa989084242b6c48a18921bb7
 ~
@@ -54,7 +46,5 @@ q
 Asrc/main/java/com/kubilaycicek/archiver/mapper/ArchiveMapper.java,8\4\84b867966eea4567b8538a98aef536fe8d52bbea
 s
 Csrc/main/java/com/kubilaycicek/archiver/service/ArchiveService.java,2\8\286e63b264331a7275ed45e9d956920dd1961224
-w
-Gsrc/main/java/com/kubilaycicek/archiver/service/ArchiveServiceImpl.java,e\d\ed573f2310dedddcb242019686f8ced66f892e44
 x
 Hsrc/main/java/com/kubilaycicek/archiver/service/CategoryServiceImpl.java,d\2\d29653421c9f78d10feebc7b6c04540db927120d

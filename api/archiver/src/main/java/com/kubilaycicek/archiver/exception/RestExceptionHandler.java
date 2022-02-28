@@ -22,7 +22,7 @@ import java.util.List;
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    @ExceptionHandler({ArchiveNotFoundException.class})
+    @ExceptionHandler({Exception.class})
     public ResponseEntity<ErrorResponse> handleAllExceptions(Exception ex,HttpStatus status, WebRequest request) {
         List<String> details = new ArrayList<>();
         details.add(ex.getLocalizedMessage());
@@ -41,4 +41,5 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         log.error(stringBuilder.toString());
         return new ResponseEntity<>(new ErrorResponse(status.value(), status, details, LocalDateTime.now()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+
 }
