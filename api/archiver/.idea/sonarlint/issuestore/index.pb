@@ -1,10 +1,6 @@
 
-B
-docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
-p
-@src/main/java/com/kubilaycicek/archiver/ArchiverApplication.java,e\e\ee6a024d2c476d6bd8573496e964390e214182dd
 :
 
 dockerfile,5\5\558c49b604560afd1841f2a7b49e2f60bd1f99b3
@@ -48,3 +44,17 @@ s
 Csrc/main/java/com/kubilaycicek/archiver/service/ArchiveService.java,2\8\286e63b264331a7275ed45e9d956920dd1961224
 x
 Hsrc/main/java/com/kubilaycicek/archiver/service/CategoryServiceImpl.java,d\2\d29653421c9f78d10feebc7b6c04540db927120d
+€
+Psrc/main/java/com/kubilaycicek/archiver/exception/CategoryNotFoundException.java,2\a\2af0e069baf53305b190f731744b5b6e79661b2a
+z
+Jsrc/main/java/com/kubilaycicek/archiver/controller/CategoryController.java,a\e\ae815b3aad8a2d6ccd3ee5c02d8f46f8c86e133d
+t
+Dsrc/main/java/com/kubilaycicek/archiver/service/CategoryService.java,3\5\3507ba20075c64306812ad0e8176df70e7d86f91
+
+Osrc/main/java/com/kubilaycicek/archiver/exception/ArchiveNotFoundException.java,d\6\d6d0afcb14bc20ea9930586ead5e71e480f145a8
+w
+Gsrc/main/java/com/kubilaycicek/archiver/service/ArchiveServiceImpl.java,e\d\ed573f2310dedddcb242019686f8ced66f892e44
+{
+Ksrc/main/java/com/kubilaycicek/archiver/exception/RestExceptionHandler.java,c\1\c1eaac107f06f8f59e0853ba1bb096fbe04ba9ee
+‚
+Rsrc/main/java/com/kubilaycicek/archiver/interceptor/RequestHandlerInterceptor.java,a\c\ac5be0e008bb7c4358618d14621309c8530deb9a
