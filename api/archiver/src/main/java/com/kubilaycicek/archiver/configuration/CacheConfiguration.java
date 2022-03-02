@@ -14,12 +14,12 @@ public class CacheConfiguration {
     @CacheEvict(value = "cacheListOfArchive", allEntries = true)
     @Scheduled(fixedRate = 24 * 60 * 60 * 1000)
     public void removeCacheOfArchive() {
-        log.error("Cache cleaned");
+        log.info("Cache cleaned");
     }
 
     @CacheEvict(value = "cacheListOfCategory", allEntries = true)
     @Scheduled(fixedRate = 24 * 60 * 60 * 1000)
     public void removeCacheOfCategory() {
-        log.error("Cache cleaned");
+        log.info("Cache cleaned");
     }
 }
