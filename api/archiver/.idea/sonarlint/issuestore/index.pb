@@ -4,8 +4,6 @@ X
 :
 
 dockerfile,5\5\558c49b604560afd1841f2a7b49e2f60bd1f99b3
-u
-Esrc/test/java/com/kubilaycicek/archiver/ArchiverApplicationTests.java,c\8\c8c4fa010528ca9982961ae9a02183461591f1db
 <
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 k
@@ -46,8 +44,6 @@ x
 Hsrc/main/java/com/kubilaycicek/archiver/service/CategoryServiceImpl.java,d\2\d29653421c9f78d10feebc7b6c04540db927120d
 €
 Psrc/main/java/com/kubilaycicek/archiver/exception/CategoryNotFoundException.java,2\a\2af0e069baf53305b190f731744b5b6e79661b2a
-z
-Jsrc/main/java/com/kubilaycicek/archiver/controller/CategoryController.java,a\e\ae815b3aad8a2d6ccd3ee5c02d8f46f8c86e133d
 t
 Dsrc/main/java/com/kubilaycicek/archiver/service/CategoryService.java,3\5\3507ba20075c64306812ad0e8176df70e7d86f91
 

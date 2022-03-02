@@ -10,9 +10,16 @@ import org.springframework.scheduling.annotation.Scheduled;
 @Configuration
 @EnableScheduling
 public class CacheConfiguration {
+
     @CacheEvict(value = "cacheListOfArchive", allEntries = true)
-    @Scheduled(fixedRate = 60 * 1000)
-    public void removeFindAllMetrics() {
+    @Scheduled(fixedRate = 24 * 60 * 60 * 1000)
+    public void removeCacheOfArchive() {
+        log.error("Cache cleaned");
+    }
+
+    @CacheEvict(value = "cacheListOfCategory", allEntries = true)
+    @Scheduled(fixedRate = 24 * 60 * 60 * 1000)
+    public void removeCacheOfCategory() {
         log.error("Cache cleaned");
     }
 }
