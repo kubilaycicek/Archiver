@@ -3,10 +3,15 @@ Archiver is Image Storage Application.
 
 ## BACKEND
 ### Used Technologies
-* Java 8
-* Spring Boot
+* Java 11
 * Gradle
-* JPA / Hibernate
-* H2 Database
+* Logback
+* Open API
 * Mapstruct
+* H2 Database
+* Spring Boot
 * Project Lombok
+* JPA / Hibernate
+* Spring Framework
+* Spring Validation
+
