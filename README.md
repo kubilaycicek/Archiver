@@ -5,8 +5,7 @@ Archiver is Image Storage Application.
 
 ### Architecture 
 I developed REST API with Java 11 as Monolitich Architecture.
-
-![ArchiveArchitecture](https://user-images.githubusercontent.com/44985849/157319738-dbdee608-6d75-4cdd-af11-bf93bc22ffc2.png)
+Folders Three 
 
 ### Libraries and tools 🛠
 * Java 11
