@@ -2,8 +2,11 @@
 Archiver is Image Storage Application.
 
 ## Backend Application
-### Libraries and tools 🛠
 
+### Architecture 
+![Uploading Ekran görüntüsü 2022-03-08 232841.png…]()
+
+### Libraries and tools 🛠
 * Java 11
 * Gradle
 * Logback
