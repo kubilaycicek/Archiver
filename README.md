@@ -1,8 +1,8 @@
 # Archiver
 Archiver is Image Storage Application.
 
-## BACKEND
-### Used Technologies
+### Backend Application
+##### Used Technologies
 * Java 11
 * Gradle
 * Logback
@@ -14,4 +14,3 @@ Archiver is Image Storage Application.
 * JPA / Hibernate
 * Spring Framework
 * Spring Validation
-
