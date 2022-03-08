@@ -12,5 +12,6 @@ Archiver is Image Storage Application.
 * Spring Boot
 * Project Lombok
 * JPA / Hibernate
+* Spring Cache
 * Spring Framework
 * Spring Validation
