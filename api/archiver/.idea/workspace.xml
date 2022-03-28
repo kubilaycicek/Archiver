@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f54e556e-f00c-4c4a-99b3-d06b527c62b2" name="Changes" comment="" />
+    <list default="true" id="f54e556e-f00c-4c4a-99b3-d06b527c62b2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -267,7 +269,7 @@
       <workItem from="1646649356403" duration="15000" />
       <workItem from="1646771220161" duration="877000" />
       <workItem from="1647011706706" duration="6000" />
-      <workItem from="1648493651849" duration="6876000" />
+      <workItem from="1648493651849" duration="7026000" />
     </task>
     <task id="LOCAL-00001" summary="I updated RestExceptionHandler">
       <created>1645357455899</created>
@@ -345,11 +347,6 @@
             </State>
           </value>
         </entry>
-      </map>
-    </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="7ed729f5-8bbc-4440-a998-0c42339425f3" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>
