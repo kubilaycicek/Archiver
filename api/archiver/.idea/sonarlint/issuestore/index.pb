@@ -4,8 +4,6 @@ X
 :
 
 dockerfile,5\5\558c49b604560afd1841f2a7b49e2f60bd1f99b3
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 k
 ;src/main/java/com/kubilaycicek/archiver/util/ImageUtil.java,a\7\a79d978ae288c7872214bba2f0a4d7f2aa6f280e
 y
@@ -18,8 +16,6 @@ Qsrc/main/java/com/kubilaycicek/archiver/payload/response/ArchiveListResponse.ja
 Lsrc/main/java/com/kubilaycicek/archiver/payload/request/CategoryRequest.java,6\8\68cc0fa52b5161850eaadd0182ac43ed944ca1c4
 t
 Dsrc/main/java/com/kubilaycicek/archiver/payload/dto/CategoryDto.java,0\c\0c09ca7fecde0796eff966706f49e7acc2339114
-s
-Csrc/main/java/com/kubilaycicek/archiver/payload/dto/ArchiveDto.java,c\b\cbc48a2ed8d0b0f0a4b560f132a19822972ff7ef
 s
 Csrc/main/java/com/kubilaycicek/archiver/payload/model/Category.java,8\b\8bd9c02c17fc1e1b784da0116b1889b649881802
 r
@@ -36,8 +32,6 @@ Nsrc/main/java/com/kubilaycicek/archiver/payload/response/CategoryResponse.java
 Rsrc/main/java/com/kubilaycicek/archiver/payload/response/CategoryListResponse.java,4\1\41211ecce9300e2ae072500e2de1abb6012bd88f
 r
 Bsrc/main/java/com/kubilaycicek/archiver/mapper/CategoryMapper.java,5\b\5bd92ef422f351552f900f8c60da3dcffc27863b
-q
-Asrc/main/java/com/kubilaycicek/archiver/mapper/ArchiveMapper.java,8\4\84b867966eea4567b8538a98aef536fe8d52bbea
 s
 Csrc/main/java/com/kubilaycicek/archiver/service/ArchiveService.java,2\8\286e63b264331a7275ed45e9d956920dd1961224
 x
@@ -52,5 +46,21 @@ w
 Gsrc/main/java/com/kubilaycicek/archiver/service/ArchiveServiceImpl.java,e\d\ed573f2310dedddcb242019686f8ced66f892e44
 {
 Ksrc/main/java/com/kubilaycicek/archiver/exception/RestExceptionHandler.java,c\1\c1eaac107f06f8f59e0853ba1bb096fbe04ba9ee
+z
+Jsrc/main/java/com/kubilaycicek/archiver/controller/CategoryController.java,a\e\ae815b3aad8a2d6ccd3ee5c02d8f46f8c86e133d
+q
+Asrc/main/java/com/kubilaycicek/archiver/mapper/ArchiveMapper.java,8\4\84b867966eea4567b8538a98aef536fe8d52bbea
+s
+Csrc/main/java/com/kubilaycicek/archiver/payload/dto/ArchiveDto.java,c\b\cbc48a2ed8d0b0f0a4b560f132a19822972ff7ef
+}
+Msrc/main/java/com/kubilaycicek/archiver/configuration/CacheConfiguration.java,5\8\582383126e4dfcad6010c98895088225756f3fbb
+w
+Gsrc/main/java/com/kubilaycicek/archiver/configuration/WebMvcConfig.java,9\9\99346983238a4b266820cf8b37cf0e4516012030
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+u
+Esrc/test/java/com/kubilaycicek/archiver/ArchiverApplicationTests.java,c\8\c8c4fa010528ca9982961ae9a02183461591f1db
 ‚
 Rsrc/main/java/com/kubilaycicek/archiver/interceptor/RequestHandlerInterceptor.java,a\c\ac5be0e008bb7c4358618d14621309c8530deb9a
+p
+@src/main/java/com/kubilaycicek/archiver/ArchiverApplication.java,e\e\ee6a024d2c476d6bd8573496e964390e214182dd

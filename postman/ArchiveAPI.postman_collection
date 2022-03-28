@@ -26,9 +26,12 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:9090/api/v1/categories/list",
+							"raw": "https://archiver-api.herokuapp.com:9090/api/v1/categories/list",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"archiver-api",
+								"herokuapp",
+								"com"
 							],
 							"port": "9090",
 							"path": [
@@ -45,10 +48,16 @@
 					"name": "SaveCategory",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"categoryDto\": {\r\n        \"name\": \"Amazing\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"categoryDto\": {\r\n        \"name\": \"Amazing-1\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
