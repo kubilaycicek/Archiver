@@ -34,7 +34,7 @@ public class ArchiveController {
     }
 
     @Tag(name = "list of Archive ")
-    @Cacheable(value = "cacheListOfArchive")
+    //@Cacheable(value = "cacheListOfArchive")
     @GetMapping(value = "/list")
     public ResponseEntity<ArchiveListResponse> getList() {
         return ResponseEntity.ok(new ArchiveListResponse(archiveService.getList()));

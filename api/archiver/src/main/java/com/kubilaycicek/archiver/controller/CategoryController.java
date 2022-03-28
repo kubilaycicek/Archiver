@@ -25,7 +25,7 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @Tag(name = "list of Category ")
-    @Cacheable(value = "cacheListOfCategory")
+    //@Cacheable(value = "cacheListOfCategory")
     @GetMapping(value = "/list")
     public ResponseEntity<CategoryListResponse> getList() {
         return ResponseEntity.ok(new CategoryListResponse(categoryService.getList()));

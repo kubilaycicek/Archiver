@@ -1,3 +1,8 @@
 # UI
 **/node_modules
-/api/archiver/.gradle/
+
+# API
+/api/archiver/.gradle
+/api/archiver/gradle
+/api/archiver/build
+/api/archiver/.build

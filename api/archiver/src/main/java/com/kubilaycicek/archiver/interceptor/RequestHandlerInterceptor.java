@@ -15,6 +15,7 @@ public class RequestHandlerInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
+        /*
         String currentContentType = request.getContentType();
         if (!currentContentType.equals(MediaType.APPLICATION_JSON_VALUE)) {
 
@@ -34,7 +35,7 @@ public class RequestHandlerInterceptor implements HandlerInterceptor {
             throw new Exception(errorStringBuilder.toString());
 
         }
-
+       */
         return true;
     }
 }
