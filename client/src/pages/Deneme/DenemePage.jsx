@@ -3,8 +3,7 @@ import Banner from '../../components/Banner/Banner';
 import ImagesGrid from '../../components/ImagesGrid/ImagesGrid';
 import Layout from '../../components/Layout/Layout';
 
-import './homepage.css';
-const HomePage = () => {
+const DenemePage = () => {
   return (
     <Layout>
       <Banner />
@@ -13,4 +12,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default DenemePage;

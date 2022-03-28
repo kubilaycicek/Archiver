@@ -2,6 +2,7 @@ import './postImage.css';
 import { useState } from 'react';
 import postFile from '../../hooks/postFile';
 import { useDispatch, useSelector } from 'react-redux';
+import uploadIcon from '../../assets/icons/upload3.svg';
 function PostImage() {
   const countState = useSelector(state => state.countReducers)
 
@@ -37,15 +38,19 @@ function PostImage() {
   return (
     <div className="PostImage">
       <form onSubmit={handleSubmit}>
+        <div className="file-upload-wrapper">
         <input
+          className='upload-file-input'
           type="file"
           label="Image"
           name="myFile"
           accept=".jpeg, .png, .jpg"
+          draggable
           onChange={(e) => handleFileUpload(e)}
         />
-        <i className="las la-file-upload"></i>
-        <button disabled={archiveDto.file !== "" ? false : true}>{archiveDto.file === "" ? 'Select a File' : 'Submit'}</button>
+        <img src={uploadIcon} alt="Upload an Image"  className='modal-upload-icon'/>
+        </div>
+        <button className='upload-submit-button' disabled={archiveDto.file !== "" ? false : true}>{archiveDto.file === "" ? 'Select a File' : 'Submit'}</button>
       </form>
     </div>
   );
