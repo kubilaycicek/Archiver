@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <!--
     <appender name="FileAppender" class="ch.qos.logback.core.FileAppender">
-        <file>D:/Archiver-API.log</file>
+        <file>C:/Archiver-API.log</file>
         <append>true</append>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
@@ -10,5 +11,6 @@
 
     <root level="ERROR">
         <appender-ref ref="FileAppender" />
-    </root>
+    </root>-->
+
 </configuration>
