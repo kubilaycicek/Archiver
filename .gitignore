@@ -7,3 +7,5 @@
 /api/archiver/build
 /api/archiver/.build
 /api/archiver/.idea
+/api/archiver/gradlew
+
