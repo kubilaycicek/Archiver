@@ -1,20 +1,24 @@
 :root {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 16px;
+  box-sizing: border-box;
   scroll-behavior: smooth;
-  --primary-color:#1976d2;
-  --danger-color:#d32f2f;
-  --warning-color:#f1b618;
+  --primary-color: #1976d2;
+  --danger-color: #d32f2f;
+  --warning-color: #f1b618;
   --info-color: #0288d1;
-  --success-color:#4caf50;
+  --success-color: #4caf50;
+  --gap:24px;
+  --border-radius:4px;
   font-size: 14px;
 }
 *,
 *::after,
 *::before {
   -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
 }
 body {
   margin: 0;
@@ -26,18 +30,25 @@ body {
   min-height: 100vh;
   position: relative;
 }
-@media screen and (min-width:600px) {
+@media screen and (min-width: 600px) {
   :root {
     font-size: 16px;
   }
 }
-@media screen and (min-width:960px) {
+/* @media screen and (min-width: 960px) {
+  :root {
+    font-size: 18px;
+  }
+} */
+@media screen and (min-width: 1320px) {
   :root {
     font-size: 18px;
   }
 }
-@media screen and (min-width:1320px) {
-  :root {
-    font-size: 20px;
-  }
+
+.hide {
+  display: none!important;
+}
+.show {
+  display: block!important;
 }

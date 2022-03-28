@@ -1,0 +1,20 @@
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="210mm" height="297mm" viewBox="0 0 210 297" version="1.1" id="svg8" inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)" sodipodi:docname="upload.svg">
+  <defs id="defs2" />
+  <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity={1.0} inkscape:pageopacity={0.0} inkscape:pageshadow={2} inkscape:zoom="0.98994949" inkscape:cx="91.428571" inkscape:cy="297.14286" inkscape:document-units="mm" inkscape:current-layer="g843" inkscape:document-rotation={0} showgrid="false" inkscape:window-width={1450} inkscape:window-height={1030} inkscape:window-x={2839} inkscape:window-y={156} inkscape:window-maximized={0} />
+  <metadata id="metadata5">
+    <rdf:rdf>
+      <cc:work rdf:about>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:work>
+    </rdf:rdf>
+  </metadata>
+  <g inkscape:label="Katman 1" inkscape:groupmode="layer" id="layer1">
+    <g transform="matrix(0.1905,0,0,0.1905,35.529765,34.773809)" id="g845">
+      <g style={{opacity: 1, fill: 'none', fillRule: 'nonzero', stroke: 'none', strokeWidth: 0, strokeLinecap: 'butt', strokeLinejoin: 'miter', strokeMiterlimit: 10, strokeDasharray: 'none'}} transform="matrix(3.89,0,0,3.89,-203.10979,-154.00516)" id="g843">
+        <path d="m 49.784824,5.2276479 c -2.316,-7.284 -9.132,-12.563 -17.184,-12.563 -8.052,0 -14.868,5.279 -17.184,12.563 C 9.0368243,6.8006483 4.2678245,12.585648 4.2678245,19.433648 v 0 c 0,8.047 6.5839995,14.63 14.6299995,14.63 h 27.406 c 8.047,0 14.63,-6.584 14.63,-14.63 v 0 c 0,-6.848 -4.769,-12.6339997 -11.149,-14.2060001 z m -7.351,9.2640001 c -1.213,1.213 -3.198,1.213 -4.411,0 l -2.303,-2.303 v 12.174 c 0,1.715 -1.404,3.119 -3.119,3.119 -1.715,0 -3.119,-1.404 -3.119,-3.119 v -12.174 l -2.303,2.303 c -1.213,1.213 -3.198,1.213 -4.411,0 -1.213,-1.213 -1.213,-3.198 0,-4.411 l 7.591,-7.5910001 c 0.012,-0.013 0.021,-0.028 0.033,-0.041 0.434,-0.434 0.968,-0.706 1.528,-0.829 0.02,-0.005 0.039,-0.013 0.059,-0.017 0.205,-0.041 0.412,-0.063 0.62,-0.063 10e-4,0 10e-4,0 0.002,0 10e-4,0 10e-4,0 0.002,0 0.208,0 0.415,0.022 0.62,0.063 0.02,0.004 0.039,0.013 0.059,0.017 0.561,0.123 1.095,0.395 1.528,0.829 0.013,0.013 0.021,0.028 0.033,0.041 l 7.591,7.5910001 c 1.213,1.213 1.213,3.198 0,4.411 z" style={{opacity: 1, fill: '#3d3846', fillRule: 'nonzero', stroke: 'none', strokeWidth: 1, strokeLinecap: 'butt', strokeLinejoin: 'miter', strokeMiterlimit: 10, strokeDasharray: 'none'}} strokeLinecap="round" id="path841" />
+      </g>
+    </g>
+  </g>
+</svg>

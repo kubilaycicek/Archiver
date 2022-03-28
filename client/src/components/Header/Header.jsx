@@ -1,19 +1,17 @@
 import { Link } from 'react-router-dom';
 import './header.css';
-import logo from '../../assets/Logo/logo.png';
+import Search from '../common/SearchInput/Search';
+import LogoSvg from '../common/SvgIcons/LogoSvg';
 
 const Header = () => {
   return (
     <header className="header">
       <Link to="/">
-        <picture>
-          <img className="logo" src={logo} alt="Application Name" />
+        <picture className='header-logo'>
+        <LogoSvg />
         </picture>
       </Link>
-      <div className="search-filter">
-        <input type="search" className='search-input' name="search" id="search" placeholder='Search Image...'/>
-        <i className="las la-search search-icon"></i>
-      </div>
+      <Search  value=""/>
     </header>
   );
 };

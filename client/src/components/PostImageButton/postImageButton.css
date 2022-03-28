@@ -1,56 +1,64 @@
 .post-button {
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
 
-  background-color: rgb(25, 91, 189);
+  background-color: transparent; 
   color: #fff;
   cursor: pointer;
   border: none;
   outline: none;
   border-radius: 2px;
-  padding: 0 1rem;
-  
-  height: 4rem;
+
+  width:150px;
+  height: 50px;
   display: flex;
   align-items: center;
-
-  transition: width .4s ease-in;
   overflow: hidden;
-}
-.first-width {
-  width: 4rem;
-}
-.last-width {
-  width: 130px;
+  padding: 0;
+  z-index: 10;
+
+  transition: all 0.5s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .post-upload-icon {
-  filter: invert();
-  margin-right: .5rem;
+  width: 28px;
+  height: auto;
 }
-.post-upload-text{
-  position: relative;
-  white-space: nowrap;
-  right: -80px;
+.post-icon {
+  background-color: rgb(11, 145, 235);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
-.text-end {
-  right: 0px;
+.post-text {
+  position: absolute;
+  left: 50px;
+  width: 100px;
+  height: 100%;
+  background-color: rgb(25, 91, 189);
+  transition: all 0.3s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
-@media screen and (min-width:720px) {
-  .last-width {
-    width: 140px;
-  }
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-/* .post-button:hover .post-button-icon::after{
-  content: "Post Image";
-  font-weight: 400;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.25rem;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+.post-button:hover .post-text {
+  left: 150px;
 }
-.post-button:hover {
-  width: fit-content;
-  padding: 1rem;
-} */
+.post-button:hover .post-icon {
+  left: 0;
+  background-color: rgb(11, 145, 235);
+  width: 100%;
+}
+.open-state-text {
+  left: 150px;
+}
+.open-state-icon {
+  left: 0;
+  background-color: rgb(11, 145, 235);
+  width: 100%;
+}

@@ -1,30 +1,40 @@
 import './postImageButton.css';
+import { useEffect } from 'react';
 import uploadIcon from '../../assets/icons/upload-icon.png';
-const PostImageButton = ({toggleModal}) => {
-  const handleHover = () => {
-    const btn = document.querySelector('.post-button');
-    const btnText = document.querySelector('.post-upload-text');
-    btn.classList.add('last-width');
-    btnText.classList.add('text-end');
-  }
-  const handleHoverOut = () => {
-    const btn = document.querySelector('.post-button');
-    const btnText = document.querySelector('.post-upload-text');
-    btn.classList.remove('last-width');
-    btnText.classList.remove('text-end');
-  }
+import upload from '../../assets/icons/upload3.svg';
+const PostImageButton = ({ toggleModal, isModalOpen }) => {
+  useEffect(() => {
+    if(isModalOpen) {
+      let iconDiv = document.querySelector('.post-icon');
+      iconDiv.classList.add('open-state-icon')
+      let textDiv = document.querySelector('.post-text');
+      textDiv.classList.add('open-state-text')
+    }else {
+      let iconDiv = document.querySelector('.post-icon');
+      iconDiv.classList.remove('open-state-icon')
+      let textDiv = document.querySelector('.post-text');
+      textDiv.classList.remove('open-state-text')
+    }
+  }, [isModalOpen])
+  
   const handlePostModal = () => {
     console.log('Open Modal');
-    toggleModal(true)
-  }
+    toggleModal(true);
+    console.log('opener',isModalOpen);
+    
+  };
   return (
-    <button className="post-button first-width" onMouseEnter={handleHover} onMouseLeave={handleHoverOut} onClick={handlePostModal}>
+    <button className="post-button" onClick={handlePostModal}>
+      <div className="post-icon flex-center">
         <img
-          src={uploadIcon}
+          src={upload}
           className="post-upload-icon"
           alt="Upload an image"
         />
-        <span className='post-upload-text'>Post Image</span>
+      </div>
+      <div className="post-text flex-center">
+        <span className="post-upload-text">Post Image</span>
+      </div>
     </button>
   );
 };
