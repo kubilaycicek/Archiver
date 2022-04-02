@@ -1,21 +1,25 @@
 import './postImage.css';
 import { useState } from 'react';
 import postFile from '../../hooks/postFile';
+import useFetch from '../../hooks/useFetch';
 import { useDispatch, useSelector } from 'react-redux';
 import uploadIcon from '../../assets/icons/upload3.svg';
-function PostImage() {
+
+function PostImage({categoryList}) {
   const countState = useSelector(state => state.countReducers)
 
-  const [archiveDto, setArchiveDto] = useState({
-    file: '',
-    category:''
+  const [archivePostRequest, setArchivePostRequest] = useState({
+    categoryUuid:'11a3eb27-8a33-4ac0-855c-b2d442b5a850',
+    archiveDto: {
+      file: ''
+    }
   })
   const { createPost } = postFile()
-  const url = 'http://localhost:5000/uploads';
- 
+  const url = 'http://localhost:9090/api/v1/archives';
   const handleSubmit = (e) => {
     e.preventDefault();
-    createPost(url, archiveDto);
+    console.log('submit', archivePostRequest)
+    createPost(url, archivePostRequest);
   };
   const convertToBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -33,7 +37,11 @@ function PostImage() {
     const file = e.target.files[0];
     const base64 = await convertToBase64(file);
     console.log('base64', base64);
-    setArchiveDto({ ...archiveDto, file: base64 });
+    setArchivePostRequest({ ...archivePostRequest, archiveDto: {
+      ...archivePostRequest.archiveDto,
+      file: base64
+    } });
+    console.log('objemiz', archivePostRequest);
   };
   return (
     <div className="PostImage">
@@ -50,7 +58,13 @@ function PostImage() {
         />
         <img src={uploadIcon} alt="Upload an Image"  className='modal-upload-icon'/>
         </div>
-        <button className='upload-submit-button' disabled={archiveDto.file !== "" ? false : true}>{archiveDto.file === "" ? 'Select a File' : 'Submit'}</button>
+        <select name="categories" id="categories">
+          <option value="0">Please select a category...</option>
+          {
+            categoryList.length>0 ? categoryList.map(category => console.log(category)) : <option>Data Yok amk</option>
+          }
+        </select>
+        <button className='upload-submit-button' disabled={archivePostRequest.archiveDto.file !== "" ? false : true}>{archivePostRequest.archiveDto.file === "" ? 'Select a File' : 'Submit'}</button>
       </form>
     </div>
   );
