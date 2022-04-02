@@ -5,7 +5,7 @@ const postFile = () => {
     try {
       await axios.post(url, file);
     } catch (error) {
-      console.log(error.message);
+      console.log('error',error);
     }
   };
   return { createPost };
