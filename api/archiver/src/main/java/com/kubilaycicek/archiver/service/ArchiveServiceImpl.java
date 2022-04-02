@@ -51,6 +51,11 @@ public class ArchiveServiceImpl implements ArchiveService {
     }
 
     @Override
+    public List<ArchiveDto> getListByCategory(String categoryUuid) {
+        return archiveMapper.toArchiveDtoList(archiveRepository.findAllByCategoryUuid(categoryUuid));
+    }
+
+    @Override
     public Optional<ArchiveDto> findByUuid(String uuid) {
         return Optional.ofNullable(archiveMapper.toArchiveDto(archiveRepository.findByUuid(uuid).orElseThrow(() -> new ArchiveNotFoundException("Archive : " + uuid + " not found."))));
     }

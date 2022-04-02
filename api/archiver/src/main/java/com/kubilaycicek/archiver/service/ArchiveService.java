@@ -9,5 +9,6 @@ public interface ArchiveService {
     ArchiveDto saveArchive(ArchiveDto archiveDto,String categoryUuid);
     void deleteArchive(String uuid);
     List<ArchiveDto> getList();
+    List<ArchiveDto> getListByCategory(String categoryUuid);
     Optional<ArchiveDto> findByUuid(String uuid);
 }

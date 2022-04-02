@@ -1,6 +1,7 @@
 package com.kubilaycicek.archiver.controller;
 
 import com.kubilaycicek.archiver.payload.request.ArchiveRequest;
+import com.kubilaycicek.archiver.payload.request.GetArchiveListByCategoryRequest;
 import com.kubilaycicek.archiver.payload.response.ArchiveListResponse;
 import com.kubilaycicek.archiver.payload.response.ArchiveResponse;
 import com.kubilaycicek.archiver.service.ArchiveService;
@@ -23,10 +24,10 @@ public class ArchiveController {
     private final ArchiveService archiveService;
 
     @Tag(name = "save archive ")
-    @PostMapping( produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ArchiveResponse> saveArchive(@Valid @RequestBody ArchiveRequest archiveRequest) {
         if (archiveRequest.getArchiveDto() != null) {
-            return ResponseEntity.status(HttpStatus.CREATED).body(new ArchiveResponse(archiveService.saveArchive(archiveRequest.getArchiveDto(),archiveRequest.getCategoryUuid())));
+            return ResponseEntity.status(HttpStatus.CREATED).body(new ArchiveResponse(archiveService.saveArchive(archiveRequest.getArchiveDto(), archiveRequest.getCategoryUuid())));
         } else {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
@@ -34,10 +35,15 @@ public class ArchiveController {
     }
 
     @Tag(name = "list of Archive ")
-    //@Cacheable(value = "cacheListOfArchive")
     @GetMapping(value = "/list")
     public ResponseEntity<ArchiveListResponse> getList() {
         return ResponseEntity.ok(new ArchiveListResponse(archiveService.getList()));
+    }
+
+    @Tag(name = "List of Archive By Category ")
+    @GetMapping(value = "/list/category")
+    public ResponseEntity<ArchiveListResponse> getListByCategory(@RequestBody @Valid GetArchiveListByCategoryRequest request) {
+        return ResponseEntity.ok(new ArchiveListResponse(archiveService.getListByCategory(request.getCategoryUuid())));
     }
 
     @Tag(name = "delete Archive ")
