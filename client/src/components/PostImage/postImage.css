@@ -59,3 +59,9 @@ form .upload-submit-button:not(:disabled):hover {
   background-color: #bb6414;
 }
 
+.category-select {
+  font-size: 1.5rem;
+  padding: .5rem 1rem;
+  border: 1px solid #ababab;
+}
+
