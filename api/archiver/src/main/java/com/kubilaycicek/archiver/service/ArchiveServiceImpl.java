@@ -29,7 +29,7 @@ public class ArchiveServiceImpl implements ArchiveService {
 
         Archive archive = archiveMapper.toArchive(archiveDto);
         archive.setUuid(UUID.randomUUID().toString());
-        Optional<Category> categoryDb = Optional.ofNullable(categoryRepository.findByUuid(categoryUuid).orElseThrow(() -> new CategoryNotFoundException("Uuid+" + categoryUuid + "not found")));
+        Optional<Category> categoryDb = Optional.ofNullable(categoryRepository.findByUuid(categoryUuid).orElseThrow(() -> new CategoryNotFoundException("Category Uuid" + categoryUuid + " not found")));
         if (categoryDb.isPresent()) {
             archive.setCategory(categoryDb.get());
         }
