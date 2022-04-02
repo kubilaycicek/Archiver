@@ -8,6 +8,7 @@ const useFetch = (url) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(url);
+      console.log('response', response);
       const apiData = response?.data;
       if (response.status === 200) {
         setData(apiData);

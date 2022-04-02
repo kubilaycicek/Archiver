@@ -1,6 +1,6 @@
 import PostImage from '../PostImage/PostImage';
 import './modal.css';
-const Modal = ({ isModalOpen, toggleModal, categoryList }) => {
+const Modal = ({ isModalOpen, toggleModal }) => {
   return (
     <>
       <div
@@ -13,7 +13,7 @@ const Modal = ({ isModalOpen, toggleModal, categoryList }) => {
       >
         <div className="modal-header">Drag an image file or click to select</div>
         <div className="modal-content">
-          <PostImage categoryList={categoryList}/>
+          <PostImage/>
         </div>
       </div>
     </>
