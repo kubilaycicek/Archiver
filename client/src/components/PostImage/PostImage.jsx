@@ -5,21 +5,26 @@ import useFetch from '../../hooks/useFetch';
 import { useDispatch, useSelector } from 'react-redux';
 import uploadIcon from '../../assets/icons/upload3.svg';
 
-function PostImage({categoryList}) {
+function PostImage() {
   const countState = useSelector(state => state.countReducers)
-
-  const [archivePostRequest, setArchivePostRequest] = useState({
-    categoryUuid:'11a3eb27-8a33-4ac0-855c-b2d442b5a850',
-    archiveDto: {
-      file: ''
-    }
-  })
+  const [categoryUUID, setCategoryUUID] = useState("");
+  const [base64, setBase64] = useState("")
+  const {isLoading, data, error} = useFetch('http://localhost:9090/api/v1/categories/list');
   const { createPost } = postFile()
   const url = 'http://localhost:9090/api/v1/archives';
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('submit', archivePostRequest)
-    createPost(url, archivePostRequest);
+    console.log('event',e);
+    if(categoryUUID !== "") {
+      createPost(url, {
+        categoryUuid:categoryUUID,
+        archiveDto: {
+          file: base64
+        }
+      });
+    }else {
+      alert('Ccategory cannot be unselected !!!')
+    }
   };
   const convertToBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -36,13 +41,20 @@ function PostImage({categoryList}) {
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertToBase64(file);
-    console.log('base64', base64);
-    setArchivePostRequest({ ...archivePostRequest, archiveDto: {
-      ...archivePostRequest.archiveDto,
-      file: base64
-    } });
-    console.log('objemiz', archivePostRequest);
+    setBase64(base64);
   };
+  const makeCategorySelectList = () => {
+    if(data.categoryList !== undefined && data.categoryList.length > 0) {
+      return data.categoryList.map(({name, uuid, id}) => <option value={uuid} key={id}>{name}</option>)
+    } else {
+      return <option>Data Yok Lan Defol</option>
+    }
+  }
+  const handleCategory = (e) => {
+    const { value, name } = e.target;
+    console.log('value',value, 'name',name );
+    setCategoryUUID(value);
+  }
   return (
     <div className="PostImage">
       <form onSubmit={handleSubmit}>
@@ -58,13 +70,11 @@ function PostImage({categoryList}) {
         />
         <img src={uploadIcon} alt="Upload an Image"  className='modal-upload-icon'/>
         </div>
-        <select name="categories" id="categories">
+        <select name="categories" id="categories" onChange={handleCategory} className="category-select">
           <option value="0">Please select a category...</option>
-          {
-            categoryList.length>0 ? categoryList.map(category => console.log(category)) : <option>Data Yok amk</option>
-          }
+          { makeCategorySelectList() }
         </select>
-        <button className='upload-submit-button' disabled={archivePostRequest.archiveDto.file !== "" ? false : true}>{archivePostRequest.archiveDto.file === "" ? 'Select a File' : 'Submit'}</button>
+        <button className='upload-submit-button' disabled={base64 !== "" ? false : true}>{base64 === ""  && categoryUUID === "" ? 'Select a File' : 'Submit'}</button>
       </form>
     </div>
   );
