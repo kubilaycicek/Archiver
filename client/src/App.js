@@ -8,7 +8,6 @@ import useFetch from './hooks/useFetch';
 import Modal from './components/Modal/Modal';
 import DenemePage from './pages/Deneme/DenemePage';
 function App() {
-  
   const countState = useSelector((state) => state.countReducers);
   const [isModalOpen, setIsModalOpen] = useState(false);
     
@@ -16,7 +15,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/deneme" element={<DenemePage />} />
+        <Route path="/category/:uuid" element={<DenemePage />} />
       </Routes>
       <PostImageButton toggleModal={setIsModalOpen} isModalOpen={isModalOpen} />
       <Modal isModalOpen={isModalOpen} toggleModal={setIsModalOpen}/>

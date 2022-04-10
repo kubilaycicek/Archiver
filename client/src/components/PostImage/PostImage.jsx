@@ -6,12 +6,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import uploadIcon from '../../assets/icons/upload3.svg';
 
 function PostImage() {
-  const countState = useSelector(state => state.countReducers)
   const [categoryUUID, setCategoryUUID] = useState("");
   const [base64, setBase64] = useState("")
+
   const {isLoading, data, error} = useFetch('http://localhost:9090/api/v1/categories/list');
+
   const { createPost } = postFile()
   const url = 'http://localhost:9090/api/v1/archives';
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('event',e);
@@ -52,7 +54,6 @@ function PostImage() {
   }
   const handleCategory = (e) => {
     const { value, name } = e.target;
-    console.log('value',value, 'name',name );
     setCategoryUUID(value);
   }
   return (
@@ -71,10 +72,10 @@ function PostImage() {
         <img src={uploadIcon} alt="Upload an Image"  className='modal-upload-icon'/>
         </div>
         <select name="categories" id="categories" onChange={handleCategory} className="category-select">
-          <option value="0">Please select a category...</option>
+          <option value="">Please select a category...</option>
           { makeCategorySelectList() }
         </select>
-        <button className='upload-submit-button' disabled={base64 !== "" ? false : true}>{base64 === ""  && categoryUUID === "" ? 'Select a File' : 'Submit'}</button>
+        <button type="submit" className='upload-submit-button' disabled={base64 !== "" && categoryUUID !== "" ? false : true}>{base64 === ""  && categoryUUID === "" ? 'Select a File' : 'Submit'}</button>
       </form>
     </div>
   );
