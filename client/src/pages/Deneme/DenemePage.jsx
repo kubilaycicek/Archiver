@@ -9,12 +9,28 @@ import axios from 'axios';
 const DenemePage = () => {
   const {uuid} = useParams();
   console.log('param id',uuid);
-  const {isLoading, data, error} = useFetchWithBody('http://localhost:9090/api/v1/archives/list/category', { "categoryUuid": uuid})
-  //const {isLoading, data, error} = useFetch('http://localhost:9090/api/v1/archives/list/category', uuid );
-  console.log('data category page', data);
- // const images = data.archiveList !== undefined && data.archiveList.length > 0 ? data : [];
-//console.log('images', images);
-  
+  /*
+  const {isLoading, data, error} = useFetchWithBody('http://localhost:9090/api/v1/archives/list/category', { "categoryUuid" : "asdasd"});
+  console.log('data category page', data);*/
+
+  useEffect(()=>{
+    getData();
+},[]);
+
+  const getData = ()=>{
+    fetch('http://localhost:9090/api/v1/archives/list/category', requestOptions)
+    .then(response => response.json())
+    .then(data =>data );
+
+
+  }
+
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ "categoryUuid" : "KUBİLAY"})
+};
+
   return (
     <Layout>
       <Banner />

@@ -41,7 +41,7 @@ public class ArchiveController {
     }
 
     @Tag(name = "List of Archive By Category ")
-    @GetMapping(value = "/list/category")
+    @PostMapping(value = "/list/category")
     public ResponseEntity<ArchiveListResponse> getListByCategory(@RequestBody @Valid GetArchiveListByCategoryRequest request) {
         return ResponseEntity.ok(new ArchiveListResponse(archiveService.getListByCategory(request.getCategoryUuid())));
     }
