@@ -1,3 +1,9 @@
 export const initialState = {
-  count: 0,
+  categories: [],
+  images:[],
+  isLoading:true,
+  fetchImageError:null,
+  postImageError:null,
+  isImageListLoading:true,
+
 };
