@@ -1,19 +1,26 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Banner from '../../components/Banner/Banner';
 import ImagesGrid from '../../components/ImagesGrid/ImagesGrid';
 import Layout from '../../components/Layout/Layout';
-import useFetch from '../../hooks/useFetch';
+import { fetchImages } from '../../store/Actions/imageActions';
 import './homepage.css';
 const HomePage = () => {
-  const {isLoading, data, error} = useFetch('http://localhost:9090/api/v1/archives/list');
-  console.log('data home page', data);
-  const images = data.archiveList !== undefined && data.archiveList.length > 0 ? data : [];
-console.log('images', images);
-  
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchImages());
+  }, [dispatch]);
+
+  const { images, isImageListLoading } = useSelector((state) => state.imagesReducer);
+  console.log('state', images.archiveList);
+  //   const imageList = images.archiveList !== undefined && images.archiveList;
+  // console.log('images', imageList);
+
   return (
     <Layout>
       <Banner />
-      <ImagesGrid  images={images}/>
+      {isImageListLoading ? 'Images Loading Amk' : <ImagesGrid images={images.archiveList} />}
+      
     </Layout>
   );
 };

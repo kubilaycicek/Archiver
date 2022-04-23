@@ -1,6 +1,5 @@
 import './postImageButton.css';
 import { useEffect } from 'react';
-import uploadIcon from '../../assets/icons/upload-icon.png';
 import upload from '../../assets/icons/upload3.svg';
 const PostImageButton = ({ toggleModal, isModalOpen }) => {
   useEffect(() => {
@@ -29,7 +28,7 @@ const PostImageButton = ({ toggleModal, isModalOpen }) => {
         <img
           src={upload}
           className="post-upload-icon"
-          alt="Upload an image"
+          alt="Uploaded File"
         />
       </div>
       <div className="post-text flex-center">
