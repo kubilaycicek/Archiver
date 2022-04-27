@@ -1,8 +1,13 @@
 import './search.css';
+import { useState } from 'react';
+const Search = ({ name, classname }) => {
+  const [inputValue, setInputValue] = useState('');
 
-const Search = ({ name, value }) => {
+  const handleSearchBar = (ev) => {
+    setInputValue(ev.target.value);
+  };
   return (
-    <div className={`search-input-container`}>
+    <div className={`search-input-container ${classname}`}>
       <div className="icon icon--search">
         <i className="las la-search search-icon"></i>
       </div>
@@ -10,11 +15,14 @@ const Search = ({ name, value }) => {
         className="search-input"
         type="search"
         name={name}
-        value={value}
+        value={inputValue}
+        onChange={handleSearchBar}
         placeholder="Placeholderr"
       />
-      <div className="icon icon--delete">
-        <i className={`las la-times ${value !== '' ? 'show' : 'hide'}`}></i>
+      <div className="icon icon--delete" onClick={() => setInputValue('')}>
+        <i
+          className={`las la-times ${inputValue !== '' ? 'show' : 'hide'}`}
+        ></i>
       </div>
     </div>
   );

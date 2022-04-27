@@ -11,7 +11,7 @@ const Header = () => {
         <LogoSvg />
         </picture>
       </Link>
-      <Search  value=""/>
+      <Search classname="search-top"/>
     </header>
   );
 };

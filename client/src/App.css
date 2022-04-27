@@ -1,5 +1,4 @@
-
-.App{
+.App {
   background-color: #1a263f;
   min-height: 100vh;
   display: flex;
@@ -11,8 +10,8 @@ form {
   flex-flow: column;
   border: 1px dashed whitesmoke;
   padding: 1rem;
-position: relative;
-overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 form input {
   position: relative;
@@ -23,25 +22,15 @@ form input {
   top: -38px;
   background-color: transparent;
 }
-form i {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%,-40%);
-  color: #fff;
-  font-size: 7rem;
-  z-index: 2;
-}
-form input:hover  form i {
+form input:hover form i {
   color: #bb6414;
-  
 }
 form button {
   border: none;
   background: #202e4d;
   color: #fff;
   font-size: 1.5rem;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 form button:disabled {
   background: #a0a0a0;
@@ -51,6 +40,28 @@ form button:disabled:hover {
   cursor: not-allowed;
 }
 form button:not(:disabled):hover {
-  color: #bb6414 ;
+  color: #bb6414;
   cursor: pointer;
+}
+select {
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  border: 1px solid #ababab;
+  border: none;
+  border-bottom:1px solid #d6d6d6;
+}
+select:active,
+select:focus {
+  outline: none;
+}
+select:active,
+select:focus {
+  border-bottom:1px solid #1a263f;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
 }
