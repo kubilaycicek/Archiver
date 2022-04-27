@@ -4,12 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import uploadIcon from '../../assets/icons/upload3.svg';
 import { postImages } from '../../store/Actions/imageActions';
 import { convertToBase64 } from '../../utils/convertToBase64';
-
-function PostImage() {
+function PostImage({toggleModal}) {
   const [categoryUUID, setCategoryUUID] = useState('');
   const [base64, setBase64] = useState('');
+  const [isImageSelected, setIsImageSelected] = useState(false);
   const { categories } = useSelector((state) => state.categoryReducer);
-
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,32 +22,66 @@ function PostImage() {
             file: base64,
           },
         })
-      );
-    } else {
-      alert('Ccategory cannot be unselected !!!');
-    }
+        );
+      }
+      handleClear();
+      toggleModal(false)
+
   };
 
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertToBase64(file);
     setBase64(base64);
+    setIsImageSelected(true);
   };
   const makeCategorySelectList = () => {
-    if (categories.categoryList !== undefined) {
-      return categories.categoryList.map(({ name, uuid, id }) => (
-        <option value={uuid} key={id}>
-          {name}
-        </option>
-      ));
-    } else {
-      return <option>Data Yok Lan Defol</option>;
+    return (
+      <select
+        name="categories"
+        id="categories"
+        onChange={(e) => setCategoryUUID(e.target.value)}
+        className="category-select"
+        value={categoryUUID}
+        
+      >
+        <option value="">Please select a category...</option>
+        {categories.categoryList !== undefined ? (
+          categories.categoryList.map(({ name, uuid, id }) => (
+            <option value={uuid} key={id}>
+              {name}
+            </option>
+          ))
+        ) : (
+          <option>Can't found any category data on server.</option>
+        )}
+      </select>
+    );
+  };
+  const submitButton = () => {
+    if (categoryUUID !== '' && base64 !== '' && isImageSelected) {
+      return (
+        <button type="submit" className="upload-submit-button">
+          Submit
+        </button>
+      );
     }
+  };
+  const handleClear = () => {
+    setIsImageSelected(false);
+    setCategoryUUID('');
   };
   return (
     <div className="PostImage">
       <form onSubmit={handleSubmit}>
         <div className="file-upload-wrapper">
+          <button
+            type="reset"
+            className={`clear-button ${isImageSelected ? '' : 'd-none'}`}
+            onClick={handleClear}
+          >
+            <i className="las la-trash"></i>
+          </button>
           <input
             className="upload-file-input"
             type="file"
@@ -59,27 +92,13 @@ function PostImage() {
             onChange={(e) => handleFileUpload(e)}
           />
           <img
-            src={uploadIcon}
+            src={isImageSelected ? base64 : uploadIcon}
             alt="Uploaded File"
-            className="modal-upload-icon"
+            className={isImageSelected ? 'modal-upload-img' : 'modal-upload-icon'}
           />
         </div>
-        <select
-          name="categories"
-          id="categories"
-          onChange={(e) => setCategoryUUID(e.target.value)}
-          className="category-select"
-        >
-          <option value="">Please select a category...</option>
-          {makeCategorySelectList()}
-        </select>
-        <button
-          type="submit"
-          className="upload-submit-button"
-          disabled={base64 !== '' && categoryUUID !== '' ? false : true}
-        >
-          {base64 === '' && categoryUUID === '' ? 'Select a File' : 'Submit'}
-        </button>
+        {makeCategorySelectList()}
+        {submitButton()}
       </form>
     </div>
   );

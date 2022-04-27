@@ -1,36 +1,26 @@
 import './imagesgrid.css';
-import ImageTile from './ImageTile';
 const ImagesGrid = ({ images }) => {
   console.log('data', images);
   const imageTiles =
     images !== undefined && images.length > 0
-      ? images.map((image, index) => (
-          <ImageTile key={index} imgSrc={image.file} imgAltText="New 1" />
-        ))
-      : 'Data yok';
+      ? images.map(item => (
+        <div className="img-tile" key={item.id}>
+          <img src={item.file} alt="New" />
+          <div className="img-attrs">
+            <div className="icon--fav">
+              <i className="las la-heart"></i>
+            </div>
+            <div className="icon--download">
+              <i className="las la-download"></i>
+            </div>
+          </div>
+        </div>
+      ))
+      : "There isn't any image data on server. Please try add new images.";
   return (
     <div className="img-main-container">
-      <div className="grid-container">
-        <div className="grid-items">{imageTiles}</div>
-        <div className="grid-items">{imageTiles}</div>
-        {/* <div className="grid-items">
-          <ImageTile imgSrc={img4} imgAltText="New 1" />
-          <ImageTile imgSrc={img1} imgAltText="New 1" />
-          <ImageTile imgSrc={img3} imgAltText="New 1" />
-          <ImageTile imgSrc={img2} imgAltText="New 1" />
-        </div>
-        <div className="grid-items">
-          <ImageTile imgSrc={img3} imgAltText="New 1" />
-          <ImageTile imgSrc={img5} imgAltText="New 1" />
-          <ImageTile imgSrc={img4} imgAltText="New 1" />
-          <ImageTile imgSrc={img2} imgAltText="New 1" />
-        </div>
-        <div className="grid-items">
-          <ImageTile imgSrc={img4} imgAltText="New 1" />
-          <ImageTile imgSrc={img1} imgAltText="New 1" />
-          <ImageTile imgSrc={img2} imgAltText="New 1" />
-          <ImageTile imgSrc={img5} imgAltText="New 1" />
-        </div> */}
+      <div className="masonry">
+        {imageTiles}
       </div>
     </div>
   );

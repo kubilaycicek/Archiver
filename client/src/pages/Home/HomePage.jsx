@@ -7,9 +7,12 @@ import { fetchImages } from '../../store/Actions/imageActions';
 import './homepage.css';
 const HomePage = () => {
   const dispatch = useDispatch();
+  const {postImageSuccess} = useSelector(state => state.imagesReducer)
+  console.log(postImageSuccess)
   useEffect(() => {
     dispatch(fetchImages());
-  }, [dispatch]);
+  }, [dispatch, postImageSuccess])
+  useEffect(()=>{},[dispatch])
 
   const { images, isImageListLoading } = useSelector((state) => state.imagesReducer);
   console.log('state', images.archiveList);

@@ -42,7 +42,13 @@ export const postImages = (postFile) => {
     const url = process.env.REACT_APP_ARCHIVER_POST_IMAGE_API;
     axios
       .post(url, postFile)
-      .then((response) => console.log('post response', response))
+      .then((response) => {
+        console.log('post response', response)
+        dispatch({
+          type:actionTypes.POST_IMAGES_SUCCESS,
+          payload:response.data.archiveDto.id
+        })
+      })
       .catch((error) => {
         dispatch({
           type: actionTypes.POST_IMAGES_FAILURE,

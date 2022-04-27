@@ -5,5 +5,5 @@ export const initialState = {
   fetchImageError:null,
   postImageError:null,
   isImageListLoading:true,
-
+  postImageSuccess: null
 };

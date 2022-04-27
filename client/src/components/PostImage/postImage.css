@@ -2,15 +2,6 @@ form {
   border: 1px dashed whitesmoke;
 }
 
-form i {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  color: #000;
-  font-size: 7rem;
-  z-index: 2;
-}
 form .upload-file-input:hover form i {
   color: #bb6414;
 }
@@ -20,6 +11,10 @@ form .upload-submit-button {
   color: #fff;
   font-size: 1.5rem;
   padding: 0.5rem;
+}
+form .clear-button i {
+  font-size: 1.25rem;
+  color: #fff;
 }
 form .upload-submit-button:disabled {
   background: #a0a0a0;
@@ -32,10 +27,17 @@ form .upload-submit-button:not(:disabled):hover {
   color: #bb6414;
   cursor: pointer;
 }
+form > * {
+  margin-bottom:.5rem;
+}
 .modal-upload-icon {
   filter: invert(1);
   max-width: 64px;
   height: auto;
+}
+.modal-upload-img {
+  width: 100%;
+  height: 100%;
 }
 .file-upload-wrapper {
   display: flex;
@@ -46,7 +48,7 @@ form .upload-submit-button:not(:disabled):hover {
   height: 200px;
 }
 .file-upload-wrapper:hover {
-  background-color: #bb651431;
+  background-color: #c7c7c79d;
 }
 
 .file-upload-wrapper .upload-file-input {
@@ -56,12 +58,23 @@ form .upload-submit-button:not(:disabled):hover {
   width: 100%;
   z-index: 3;
   opacity: 0;
-  background-color: #bb6414;
 }
-
-.category-select {
-  font-size: 1.5rem;
-  padding: .5rem 1rem;
-  border: 1px solid #ababab;
+.clear-button {
+  z-index: 4;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #ababab;
+  padding: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+.clear-button i {
+  font-size: 1.25rem;
+}
+.d-none {
+  display: none;
+}

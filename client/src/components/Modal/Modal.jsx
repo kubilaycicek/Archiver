@@ -13,7 +13,7 @@ const Modal = ({ isModalOpen, toggleModal }) => {
       >
         <div className="modal-header">Drag an image file or click to select</div>
         <div className="modal-content">
-          <PostImage/>
+          <PostImage toggleModal={toggleModal}/>
         </div>
       </div>
     </>
