@@ -21,7 +21,7 @@ const Search = ({ name, classname }) => {
         onChange={handleSearchBar}
         onFocus={()=>setIsFocused(true)}
         onBlur={()=>setIsFocused(false)}
-        placeholder="Placeholderr"
+        placeholder="Search Images..."
       />
       <div className="icon icon--delete" onClick={() => setInputValue('')}>
         <i

@@ -79,7 +79,7 @@
   align-items: center;
   z-index: 9999;
   width: 28px;
-  opacity: .2;
+  opacity: 0.2;
 }
 
 .right-arrow > i,
@@ -89,7 +89,7 @@
   text-align: center;
 }
 .right-arrow:hover,
-.left-arrow:hover  {
+.left-arrow:hover {
   opacity: 1;
   cursor: pointer;
 }
@@ -99,25 +99,9 @@
 .right-arrow {
   right: 0;
 }
-/*.right-arrow::before {
-  content: '';
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0.98) 20%,
-    rgba(255, 255, 255, 0) 80%
-  ); 
-  height: 100%;
-  width: 50px;
-  background-color: red;
+@media screen and (min-width: 860px) {
+  .right-arrow,
+  .left-arrow {
+    display: none;
+  }
 }
-.left-arrow::after {
-  content: '';
-  background: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0.98) 20%,
-    rgba(255, 255, 255, 0) 80%
-  );
-  height: 100%;
-  width: 50px;
-}
-*/
