@@ -14,6 +14,8 @@ const imagesReducer = (state = initialState, action) => {
       return {...state, postImageError: action.payload};
     case actionTypes.POST_IMAGES_SUCCESS:
       return {...state, postImageSuccess: action.payload};
+    case actionTypes.GET_IMAGES_BY_CATEGORY_SUCCESS:
+      return {...state, imagesByCategories: action.payload};
     default:
       return state;
   }

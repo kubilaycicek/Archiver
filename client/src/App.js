@@ -19,7 +19,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/category/:uuid" element={<DenemePage />} />
+        <Route path="/:categoryName" element={<DenemePage />} />
       </Routes>
       <PostImageButton toggleModal={setIsModalOpen} isModalOpen={isModalOpen} />
       <Modal isModalOpen={isModalOpen} toggleModal={setIsModalOpen} />

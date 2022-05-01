@@ -57,3 +57,27 @@ export const postImages = (postFile) => {
       });
   };
 };
+export const getImagesByCategory = (categoryUuid) => {
+  console.log('getImagesByCategory',categoryUuid);
+  const postErrorMessage = 'Get image for category error';
+
+  return (dispatch) => {
+    console.log('return ç.')
+    const url = process.env.REACT_APP_ARCHIVER_GET_IMAGE_BY_CATEGORY_API;
+    axios
+      .post(url, categoryUuid)
+      .then((response) => {
+        console.log('post response for cat images', response)
+        dispatch({
+          type:actionTypes.GET_IMAGES_BY_CATEGORY_SUCCESS,
+          payload:response.data.archiveList
+        })
+      })
+      .catch((error) => {
+        dispatch({
+          type: actionTypes.GET_IMAGES_BY_CATEGORY_FAILURE,
+          payload: postErrorMessage,
+        });
+      });
+  };
+};
