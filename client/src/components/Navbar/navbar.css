@@ -1,6 +1,6 @@
 .nav {
-  background-color: #fff;
-  border-top: 1px solid #dddddd;
+  background-color: var(--bg-color-white);
+  border-top: 1px solid var(--border-color-dark);
   padding: 0;
   padding-right: 28px;
   position: relative;
@@ -25,7 +25,7 @@
   width: 1%;
 
   height: 100%;
-  background-color: rgb(28, 106, 209);
+  background-color: var(--primary-color);
   z-index: 11;
   transform: skewX(-30deg);
 
@@ -34,13 +34,11 @@
 .nav-link {
   text-decoration: none;
   height: 100%;
-  color: #000 !important;
+  color: var(--font-color-black) !important;
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
-  /* border: 1px solid #bdbdbd; */
   background: transparent !important;
-  /* border-radius: 50px; */
   margin: 0 0.25rem;
   line-height: 1;
   position: relative;
@@ -49,10 +47,10 @@
 }
 .nav-link:hover {
   text-decoration: none;
-  color: rgb(255, 255, 255) !important;
+  color: var(--font-color-white) !important;
 }
 .nav-link--selected {
-  background-color: #000;
+  background-color: var(--bg-color-black);
 }
 .nav-li:hover::after {
   content: '';
@@ -62,7 +60,7 @@
   z-index: 11;
   width: 100%;
   height: 100%;
-  background-color: rgb(28, 106, 209) !important;
+  background-color: var(--primary-color) !important;
   border: none;
   transform: skewX(-30deg);
   transition: all 0.35s ease-in;
@@ -72,7 +70,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #fff;
+  background-color: var(--bg-color-white);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -84,7 +82,7 @@
 
 .right-arrow > i,
 .left-arrow > i {
-  color: #000;
+  color: var(--font-color-black);
   font-size: 1.25rem;
   text-align: center;
 }

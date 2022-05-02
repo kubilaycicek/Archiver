@@ -1,6 +1,6 @@
 header {
   padding: 1rem;
-  background-color: #fff;
+  background-color: var(--bg-color-white);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,30 +18,12 @@ header .search-input-container {
 }
 header a {
   text-decoration: none;
-  color: #000;
+  color: var(--font-color-black);
 }
-/* .search-filter {
-  position: relative;
-  width: 100%;
-  margin-top: 1rem;
-}
-.search-icon {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  font-size: 1.5rem;
-  transform: translateY(-50%);
-  color: #bdbdbd;
-} */
-
 @media screen and (min-width: 720px) {
   header .search-input-container {
     max-width: 600px;
   }
-  /* .search-filter {
-    max-width: 400px;
-    margin-top: 0;
-  } */
 }
 
 .brand {

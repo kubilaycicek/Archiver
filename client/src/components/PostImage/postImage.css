@@ -2,19 +2,17 @@ form {
   border: 1px dashed whitesmoke;
 }
 
-form .upload-file-input:hover form i {
-  color: #bb6414;
-}
+
 form .upload-submit-button {
   border: none;
-  background: #202e4d;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--font-color-white);
   font-size: 1.5rem;
   padding: 0.5rem;
 }
 form .clear-button i {
   font-size: 1.25rem;
-  color: #fff;
+  color: var(--font-color-white);
 }
 form .upload-submit-button:disabled {
   background: #a0a0a0;
@@ -24,8 +22,8 @@ form .upload-submit-button:disabled:hover {
   cursor: not-allowed;
 }
 form .upload-submit-button:not(:disabled):hover {
-  color: #bb6414;
   cursor: pointer;
+  background-color: var(--primary-alt-color);
 }
 form > * {
   margin-bottom:.5rem;

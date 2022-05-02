@@ -22,25 +22,14 @@ form input {
   top: -38px;
   background-color: transparent;
 }
-form input:hover form i {
-  color: #bb6414;
-}
 form button {
   border: none;
-  background: #202e4d;
+  background: var(--primary-alt-color);
   color: #fff;
   font-size: 1.5rem;
   padding: 0.5rem;
 }
-form button:disabled {
-  background: #a0a0a0;
-  font-size: 1.5rem;
-}
-form button:disabled:hover {
-  cursor: not-allowed;
-}
-form button:not(:disabled):hover {
-  color: #bb6414;
+form button:hover {
   cursor: pointer;
 }
 select {

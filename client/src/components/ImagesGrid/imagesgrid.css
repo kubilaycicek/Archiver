@@ -27,11 +27,11 @@
 }
 .img-tile {
   display: inline-flex;
-  background: #fff;
+  background: var(--bg-color-white);
   margin: 0 0 1.5em;
   width: 100%;
   -webkit-transition: 1s ease all;
-  box-shadow: 2px 2px 4px 0 #ccc;
+  box-shadow: 2px 2px 4px 0 var(--shadow-color);
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -72,7 +72,7 @@
 
 .icon--fav,.icon--download {
   background-color: #ffffffe6;
-  border: 1px solid #0000;
+  border: 1px solid var(--border-color-dark);
   box-shadow: 0 1px 2px #0000000f;
   color: #767676;
   border-radius: var(--border-radius);

@@ -5,8 +5,8 @@ import HomePage from './pages/Home/HomePage';
 import { Routes, Route } from 'react-router-dom';
 import PostImageButton from './components/PostImageButton/PostImageButton';
 import Modal from './components/Modal/Modal';
-import DenemePage from './pages/Deneme/DenemePage';
 import { fetchCategories } from './store/Actions/categoryActions';
+import ImagesByCategory from './pages/ImagesByCategory/ImagesByCategoryPage';
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -19,7 +19,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/:categoryName" element={<DenemePage />} />
+        <Route path="/:categoryName" element={<ImagesByCategory />} />
       </Routes>
       <PostImageButton toggleModal={setIsModalOpen} isModalOpen={isModalOpen} />
       <Modal isModalOpen={isModalOpen} toggleModal={setIsModalOpen} />
