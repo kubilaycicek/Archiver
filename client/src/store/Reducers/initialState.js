@@ -6,5 +6,6 @@ export const initialState = {
   postImageError:null,
   isImageListLoading:true,
   postImageSuccess: null,
-  imagesByCategories:[]
+  imagesByCategories:[],
+  enlargedImageSrc: ""
 };

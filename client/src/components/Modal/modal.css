@@ -1,7 +1,7 @@
 .overlay {
   position: absolute;
-  background-color: rgba(68, 68, 68, 0.575);
-  color: #fff;
+  background-color:var(--bg-color-dark-gray);
+  color: var(--font-color-white);
   top: 0;
   left: 0;
   right: 0;
@@ -20,7 +20,7 @@
   left: 50%;
   width: 80%;
   max-width: 400px;
-  background-color: #fff;
+  background-color: var(--bg-color-white);
   z-index: 21;
   transition: transform 0.3s cubic-bezier(0.31, -0.105, 0.43, 1.4);
   display: flex;

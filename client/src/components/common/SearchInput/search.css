@@ -25,12 +25,12 @@ i {
   color: #bdbdbd;
 }
 .search-input:focus {
-  color: #000;
+  color: var(--font-color-black);
 }
 .icon {
   height: 54px;
   width: 54px;
-  background-color: #fff;
+  background-color: var(--bg-color-white);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,7 +46,7 @@ i {
   cursor: pointer;
 }
 .icon--delete:hover i.la-times {
-  color: #000;
+  color: var(--font-color-black);
 }
 .mobile--hide {
   display: none !important;

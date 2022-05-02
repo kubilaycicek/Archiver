@@ -15,7 +15,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, #0888f8, #f800f4);
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
   opacity: .5;
   z-index: 10;
 }
@@ -30,7 +30,7 @@
 }
 .banner-title,
 .banner-description{
-  color: #fff;
+  color: var(--font-color-white);
 }
 .banner-title {
   font-size: 2.4rem;

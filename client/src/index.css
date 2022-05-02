@@ -2,8 +2,16 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  --primary-color: #1976d2;
-  --danger-color: #d32f2f;
+  --primary-color: #0b91eb;
+  --primary-alt-color:#195bbd;
+  --secondary-color: #f800f4;
+  --font-color-white:#ffffff;
+  --font-color-black:#000000;
+  --bg-color-white:#ffffff;
+  --bg-color-black:#000000;
+  --bg-color-dark-gray:#44444493;
+  --border-color-dark:#dddddd;
+  --shadow-color:#00000080;
   --warning-color: #f1b618;
   --info-color: #0288d1;
   --success-color: #4caf50;
@@ -51,4 +59,7 @@ body {
 }
 .show {
   display: block!important;
+}
+.show--flex {
+  display: flex!important;
 }

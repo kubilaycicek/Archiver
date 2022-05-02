@@ -7,23 +7,22 @@ import { fetchImages } from '../../store/Actions/imageActions';
 import './homepage.css';
 const HomePage = () => {
   const dispatch = useDispatch();
-  const {postImageSuccess} = useSelector(state => state.imagesReducer)
-  console.log(postImageSuccess)
+  const { postImageSuccess } = useSelector((state) => state.imagesReducer);
   useEffect(() => {
     dispatch(fetchImages());
-  }, [dispatch, postImageSuccess])
-  useEffect(()=>{},[dispatch])
-
-  const { images, isImageListLoading } = useSelector((state) => state.imagesReducer);
-  console.log('state', images.archiveList);
-  //   const imageList = images.archiveList !== undefined && images.archiveList;
-  // console.log('images', imageList);
-
+  }, [dispatch, postImageSuccess]);
+  useEffect(() => {}, [dispatch]);
+  const { images, isImageListLoading } = useSelector(
+    (state) => state.imagesReducer
+  );
   return (
     <Layout>
       <Banner />
-      {isImageListLoading ? 'Images Loading Amk' : <ImagesGrid images={images.archiveList} />}
-      
+      {isImageListLoading ? (
+        'Images Loading Amk'
+      ) : (
+        <ImagesGrid images={images.archiveList} />
+      )}
     </Layout>
   );
 };

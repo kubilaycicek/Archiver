@@ -81,3 +81,9 @@ export const getImagesByCategory = (categoryUuid) => {
       });
   };
 };
+export const enlargeImageWithModal = (src) => {
+  return {
+    type: actionTypes.ENLARGE_IMAGE,
+    payload: src,
+  };
+}
