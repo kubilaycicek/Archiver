@@ -60,3 +60,6 @@ body {
 .show {
   display: block!important;
 }
+.show--flex {
+  display: flex!important;
+}

@@ -16,6 +16,8 @@ const imagesReducer = (state = initialState, action) => {
       return {...state, postImageSuccess: action.payload};
     case actionTypes.GET_IMAGES_BY_CATEGORY_SUCCESS:
       return {...state, imagesByCategories: action.payload};
+    case actionTypes.ENLARGE_IMAGE:
+      return {...state, enlargedImageSrc: action.payload};
     default:
       return state;
   }

@@ -1,10 +1,15 @@
+import { useDispatch } from 'react-redux';
+import { enlargeImageWithModal } from '../../store/Actions/imageActions';
 import './imagesgrid.css';
 const ImagesGrid = ({ images }) => {
-  console.log('data', images);
+  const dispatch = useDispatch();
+  const enlargeImage = (src) => {
+    dispatch(enlargeImageWithModal(src))
+  }
   const imageTiles =
     images !== undefined && images.length > 0
       ? images.map(item => (
-        <div className="img-tile" key={item.id}>
+        <div className="img-tile" key={item.id} onClick={()=>enlargeImage(item.file)}>
           <img src={item.file} alt="New" />
           <div className="img-attrs">
             <div className="icon--fav">
