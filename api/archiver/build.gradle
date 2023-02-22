@@ -28,7 +28,9 @@ dependencies {
 	implementation  'org.mapstruct:mapstruct:1.4.2.Final'
 	implementation 'ch.qos.logback:logback-core:1.2.3'
 	implementation 'org.springdoc:springdoc-openapi-ui:1.6.6'
+	implementation 'org.springframework.kafka:spring-kafka'
 	testImplementation 'ch.qos.logback:logback-classic:0.9.26'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
 
 
 
