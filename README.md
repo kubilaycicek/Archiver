@@ -16,6 +16,7 @@ I developed REST API with Java 11 as Monolitich Architecture.
 * Spring Boot
 * Project Lombok
 * JPA / Hibernate
+* Kafka
 * Spring Cache
 * Spring Framework
 * Spring Validation
